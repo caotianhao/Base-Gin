@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="zh">
+<head>
+    <title>Go Web 模板2</title>
+</head>
+<body>
+<p>s1</p>
+<p>姓名 {{.s1.Name}}</p>
+<p>年龄 {{.s1.Age}}</p>
+<p>成绩 {{.s1.Score}}</p>
+{{/*
+这
+是
+注
+释
+*/}}
+{{/*这也是注释*/}}
+<hr>
+<p>m1</p>
+<p>姓名 {{.m1.name}}</p>
+<p>年龄 {{.m1.age}}</p>
+{{/* 移除空格 */}}
+{{/* 在左右两个双大括号上，紧挨着写横杠，并且要和中间的值均留一个空格 */}}
+{{/* 紧挨着是语法要求，而留空格是为了避免误会，也更好看 */}}
+<p>总分 {{- .m1.allScore -}}</p>
+<p>个签 {{.m1.sign}}</p>
+<hr>
+{{/*在模板中定义变量*/}}
+{{ $a := 100 }}
+{{ $b := 200 }}
+{{ $c := .m1.age }}
+{{/* 模板里还有 if-else */}}
+{{if $a}}
+    {{$a}}
+{{else}}
+    {{$b}}
+{{end}}
+<hr>
+{{ if eq $a $b}}
+    a and b is equal
+{{else}}
+    a and b is not equal
+{{end}}
+<hr>
+{{/* 使用 range 遍历，长得和 for-range 一模一样，go 真神奇 */}}
+{{range $idx,$like:=.like}}
+    <p>{{$idx}}-{{$like}}</p>
+{{end}}
+<hr>
+{{/* with：造一个局部的作用域 */}}
+{{/* 相比之前的写法简便了一些 */}}
+<p>s1</p>
+{{with .s1}}
+<p>姓名 {{.Name}}</p>
+<p>年龄 {{.Age}}</p>
+<p>成绩 {{.Score}}</p>
+{{end}}
+<hr>
+{{/* 相当于取 like[2] */}}
+{{index .like 2}}
+</body>
+</html>

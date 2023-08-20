@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="zh">
+<head>
+    <title>模板继承</title>
+    <style>
+        * {
+            margin: 0;
+        }
+
+        .nav {
+            height: 50px;
+            width: 100%;
+            position: fixed;
+            top: 0;
+            background-color: burlywood;
+        }
+
+        .main {
+            margin-top: 50px;
+        }
+
+        .menu {
+            width: 20%;
+            height: 100%;
+            position: fixed;
+            left: 0;
+            background-color: cornflowerblue;
+        }
+
+        .center {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+<div class="nav"></div>
+<div class="main">
+    <div class="menu"></div>
+    <div class="content center">
+        <h1>This is home old.</h1>
+        <h1>This is home old2.</h1>
+        <h1>This is home old3.</h1>
+        <h1>This is home old4.</h1>
+        <h1>This is home old5.</h1>
+        <p>Hello 啥情况咋出不来呢 {{.}}</p>
+    </div>
+</div>
+
+</body>
+</html>

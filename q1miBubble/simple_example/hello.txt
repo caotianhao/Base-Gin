@@ -1,0 +1,8 @@
+<h1 style='color:orange'>Hello Gin</h1>
+<img id='img1' src='https://img0.baidu.com/it/u=1724914513,1536929868&fm=253&fmt=auto&app=138&f=JPEG?w=400&h=300'>
+<button id='b1'>换一张</button>
+<script>
+document.getElementById('b1').onclick=function(){
+    document.getElementById('img1').src='https://img1.baidu.com/it/u=4077019340,506674062&fm=253&fmt=auto&app=138&f=PNG?w=1181&h=497'
+}
+</script>
