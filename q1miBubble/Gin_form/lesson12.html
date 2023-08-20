@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+</head>
+<body>
+<!--
+    用户点 login 按钮登录的时候，网页发来指令，然后就进入 action 的 url
+    使用 post 指令，所以应该也有一个 r.POST
+    点完登录之后，如果没有 r.POST 处理请求的话，自然而然 404
+    同一个 url 不同的结果，是因为一个是 get，一个是 post
+    一次请求对应一个响应！
+    一次请求对应一个响应！！
+    一次请求对应一个响应！！！
+-->
+<form action="/lesson12" method="post" novalidate autocomplete="off">
+    <div>
+        <label for="username">username:</label>
+        <input type="text" name="username" id="username">
+    </div>
+
+    <div>
+        <label for="password">password:</label>
+        <input type="password" name="password" id="password">
+    </div>
+
+    <div>
+        <input type="submit" value="login">
+    </div>
+</form>
+</body>
+</html>
